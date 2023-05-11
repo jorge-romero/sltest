@@ -1,5 +1,16 @@
 def call(body){
 
-   powershell returnStatus: true, returnStdout: true, script: '''Write-Host \'Hello, World!\''''
+    pipeline {
+        agent {
+            label: "windows"
+        }
+        stages {
+            stage("init"){
+                steps{
+                       powershell returnStatus: true, returnStdout: true, script: '''Write-Host \'Hello, World!\''''
+                }
+            }
+        }
+    }
 
 }
