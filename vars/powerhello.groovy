@@ -2,7 +2,7 @@ def call(body){
 
     pipeline {
         agent {
-            label: "windows"
+            label "windows"
         }
         stages {
             stage("init"){
